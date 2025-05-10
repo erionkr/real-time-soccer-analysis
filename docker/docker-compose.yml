@@ -33,8 +33,7 @@ services:
       - "8080:8080"
       - "7077:7077"
     volumes:
-      - ./scripts:/opt/bitnami/spark/scripts
-
+      - ${PWD}/scripts:/opt/bitnami/spark/scripts
   spark-worker:
     image: bitnami/spark
     platform: linux/amd64
