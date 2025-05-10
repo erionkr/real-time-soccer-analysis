@@ -27,3 +27,4 @@ services:
       - "8080:8080"
     environment:
       SPARK_MODE: master
+      HOME: /opt/bitnami/spark
