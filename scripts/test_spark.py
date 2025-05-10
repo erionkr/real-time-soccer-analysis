@@ -2,13 +2,13 @@ from pyspark.sql import SparkSession
 
 spark = SparkSession.builder \
     .appName("KafkaTest") \
-    .master("spark://localhost:7077") \
+    .master("spark://spark-master:7077") \
     .getOrCreate()
 
 df = spark \
     .readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "localhost:9092") \
+    .option("kafka.bootstrap.servers", "kafka:9092") \
     .option("subscribe", "test-topic") \
     .load()
 
