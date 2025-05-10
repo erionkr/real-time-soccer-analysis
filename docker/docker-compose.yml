@@ -19,7 +19,6 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_BROKER_ID: 1
 
-
   spark:
     image: bitnami/spark
     platform: linux/amd64
@@ -28,3 +27,5 @@ services:
     environment:
       SPARK_MODE: master
       HOME: /opt/bitnami/spark
+      SPARK_LOCAL_DIRS: /opt/bitnami/spark/work
+      SPARK_WORKER_DIR: /opt/bitnami/spark/work
